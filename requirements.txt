@@ -1,0 +1,5 @@
+requests
+psutil
+paho-mqtt
+python-dotenv
+fastapi
