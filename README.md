@@ -31,3 +31,4 @@ This project is developed inside a Dev Container using [Visual Studio Code Dev C
 
 * 🧪 Add Tests
 
+* 🔐 Use self signed certificates for communication to the local broker
