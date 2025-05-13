@@ -9,10 +9,14 @@ RUN apt install python3 -y && \
     python3 -m pip config set global.break-system-packages true && \
     mkdir -p scripts/
 
+RUN touch /etc/device-info && \
+    echo "DEVICE_NAME=${DEVICE_ID}" >> /etc/device-info && \
+    echo "TYPE=${DEVICE_TYPE}" >> /etc/device-info
+
 COPY scripts/* scripts/
 
 WORKDIR /app
-
+RUN pip install . --break-system-packages
 # Copy requirements and install dependencies
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
